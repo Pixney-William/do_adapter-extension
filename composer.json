@@ -1,0 +1,9 @@
+{
+    "name": "pixney/do_adapter-extension",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Pixney\\DoAdapterExtension\\": "src/"
+        }
+    }
+}
