@@ -27,5 +27,4 @@ return [
         'type'     => 'anomaly.field_type.text',
     ],
     'prefix'      => 'anomaly.field_type.text',
-    'cloud_front' => 'anomaly.field_type.text',
 ];

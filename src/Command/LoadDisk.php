@@ -3,7 +3,6 @@
 namespace Pixney\DoAdapterExtension\Command;
 
 use Aws\S3\S3Client;
-use League\Flysystem\Filesystem;
 use League\Flysystem\MountManager;
 use League\Flysystem\AwsS3v3\AwsS3Adapter;
 use Illuminate\Contracts\Config\Repository;
@@ -100,7 +99,7 @@ class LoadDisk
                 'prefix' => $prefix,
             ]
         );
-        // https://pixney.nyc3.cdn.digitaloceanspaces.com/.DS_Store
+
         $baseUrl = 'https://'
             . $domain
             . '.' . $region
@@ -132,49 +131,5 @@ class LoadDisk
                 return $driver;
             }
         );
-
-        //$filesystem = new Filesystem($adapter);
-
-        // 's3' => [
-        //     'driver' => env('S3_DRIVER', 's3'),
-        //     'endpoint' => env('S3_ENDPOINT'),
-        //     'version' => env('S3_VERSION', 'latest'),
-        //     'key' => env('S3_KEY'),
-        //     'secret' => env('S3_SECRET'),
-        //     'region' => env('S3_REGION'),
-        //     'bucket' => env('S3_BUCKET'),
-        //     'root' => env('S3_ROOT'),
-        //     ],
-
-        // $driver = new AdapterFilesystem(
-        //     $this->disk,
-        //     new AwsS3Adapter(
-        //         $client = new S3Client(
-        //             [
-        //                 'credentials' => [
-        //                     'key'    => $key,
-        //                     'secret' => $secret,
-        //                 ],
-        //                 'endpoint'    => 'https://nyc3.digitaloceanspaces.com',
-        //                 'region'      => $region,
-        //                 'version'     => '2006-03-01',
-        //             ]
-        //         ),
-        //         $bucket,
-        //         $prefix
-        //     ),
-        //     [
-        //         'base_url' => $baseUrl,
-        //     ]
-        // );
-
-        // $manager->mountFilesystem($this->disk->getSlug(), $driver);
-
-        // $filesystem->extend(
-        //     $this->disk->getSlug(),
-        //     function () use ($driver) {
-        //         return $driver;
-        //     }
-        // );
     }
 }

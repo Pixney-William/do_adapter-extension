@@ -7,6 +7,14 @@ use Anomaly\FilesModule\Disk\Contract\DiskInterface;
 use Anomaly\FilesModule\Disk\Adapter\AdapterExtension;
 use Anomaly\FilesModule\Disk\Adapter\Contract\AdapterInterface;
 
+/**
+ * Class DoAdapterExtension
+ *
+ *  @author Pixney AB <hello@pixney.com>
+ *  @author William Åström <william@pixney.com>
+ *
+ *  @link https://pixney.com
+ */
 class DoAdapterExtension extends AdapterExtension implements AdapterInterface
 {
     /**
@@ -24,7 +32,6 @@ class DoAdapterExtension extends AdapterExtension implements AdapterInterface
      */
     public function load(DiskInterface $disk)
     {
-        
         $this->dispatch(new LoadDisk($disk));
     }
 
@@ -36,7 +43,6 @@ class DoAdapterExtension extends AdapterExtension implements AdapterInterface
      */
     public function validate(array $configuration)
     {
-        dd('f');
         return true;
     }
 }
